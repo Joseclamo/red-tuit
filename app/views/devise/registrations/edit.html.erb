@@ -30,21 +30,35 @@
     <%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-
-  <div class="form-group">
-  <%= f.text_field :name, placeholder: "Tu nombre", class: "form-control" %>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Tu nombre", class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <%= f.text_field :username, placeholder: "Elige un nombre de usuario", class: "form-control" %>
+      </div>
+    </div>
 </div>
-
-<div class="form-group">
-  <%= f.text_field :username, placeholder: "Elige un nombre de usuario", class: "form-control" %>
-</div>
-
-<div class="form-group">
-  <%= f.text_field :location, placeholder: "Ubicación", class: "form-control" %>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <%= f.text_field :location, placeholder: "Ubicación", class: "form-control" %>
+      </div>
+    </div>
 </div>
 
 <div class="form-group">
   <%= f.text_area :bio, placeholder: "Cuéntanos algo sobre ti...", class: "form-control" %>
+</div>
+
+<div class="form-group">
+  <strong>Sube una foto de perfil:</strong></br>
+  <%= f.file_field :avatar %>
 </div>
 
   <div class="actions">
