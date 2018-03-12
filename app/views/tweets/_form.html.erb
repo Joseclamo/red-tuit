@@ -13,12 +13,11 @@
 
   <div class="field">
     <%= form.label :message %>
-    <%= form.text_field :message, id: :tweet_message %>
+    <%= form.text_field :message, id: :tweet_message, placeholder: "¿Qué está pasando?" %>
   </div>
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :tweet_user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="actions">

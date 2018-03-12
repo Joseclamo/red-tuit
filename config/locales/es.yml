@@ -1,0 +1,20 @@
+es:
+  hello: "Hello world"
+  activerecord:
+    attributes:
+      tweet:
+        message: "Tuit"
+      user:
+        username: "Nombre de ususario"
+    errors:
+      models:
+        tweet:
+          attributes:
+            message:
+              blank: " está en blanco. Te ha comido la lengua el gato?"
+              too_long: " tiene que ser 140 caracteres como máximo."
+        user:
+          attributes:
+            username:
+              blank: " está en blanco, necesitas elejir uno. Elije sabiamente."
+              taken: " debe ser único, ya hay alguien usando ese nombre. Introduce otro distinto."
