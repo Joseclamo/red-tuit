@@ -1,0 +1,22 @@
+<h1>El perfil y los tweets de @<%= @user.username %></h1>
+
+<p><%= @user.name %></p>
+<p><%= @user.location %></p>
+<p><%= @user.bio %></p>
+
+<p>
+    <% if current_user.following.include?(@user.id) %>
+        <%= link_to "Dejar de seguir", unfollow_path(id: @user.id), class: "btn btn-danger" %>
+    <% else %>
+        <% if current_user.id != @user.id %>
+	        <%= link_to "Seguir", now_following_path(id: @user.id), class: "btn btn-primary" %>
+	    <% end %>
+    <% end %>
+</p>
+
+<% @user.tweets.each do |tweet| %>
+    <div>
+        <p> <%= link_to "@#{tweet.user.username}", show_user_path(id: tweet.user.id) %></p>
+	    <p><%= tweet.message %></p>
+    </div>
+<% end %>
